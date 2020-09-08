@@ -1,0 +1,107 @@
+@font-face{
+    font-family: 'SeoulHangang';
+    src:url('../SeoulHangang_ttf/SeoulHangang.ttf') format('truetype');
+}
+@font-face{
+    font-family:'Dynalight';
+    src:url('../font/Dynalight.ttf') format('truetype');
+}
+html,body{
+    font-family:'SeoulHangang';
+    text-align:center;
+    font-size:30PX;
+    
+}
+
+#header{
+    /* background-color:pink; */
+    padding-top:50px;
+    padding-bottom:50px;
+}
+.card-header{
+    display:inline-block;
+}
+.title{
+    font-family:'Dynalight' ;
+    font-size:70px;
+}
+.header-nav{
+    font-size:20px;
+}
+.header-nav>a{
+    color:black;
+    text-decoration:none;
+    margin:5px;
+}
+
+.calendar{
+    display:inline-block;
+}
+.calendar-table{
+    margin:0 auto;
+}
+.calendar-nav{
+    position: relative;
+    margin:10px;
+}
+.calendar-nav>#prev{
+    position: absolute;
+    left:0px;
+}
+.calendar-nav>#next{
+    position: absolute;
+    right:0px;
+}
+
+td{
+    padding:10px;
+    margin:0px;
+    border:1px solid black;
+    border-radius: 10%;
+}
+.diary{
+    vertical-align:top;
+    border:1px solid black;
+    padding:10px;
+    width:20%;
+    text-align:left;
+    display:none;
+}
+.diary-date{
+    display:inline-block;
+    margin:5px;
+}
+.diary-title{
+    margin:5px;
+}
+.diary-title>input{
+    padding:10px;
+    width:90%;
+    margin:5px 0px;
+    
+}
+.diary-content>textarea{
+    padding:10px;
+    margin:5px auto;
+    width:90%;
+
+    min-height:180px;
+}
+.diary-button{
+    text-align:center;
+}
+.diary-button>input{
+    text-align:center;
+    background-color:white;
+    padding:10px 20px;
+    /* display:none; */
+}
+.diary-fold{
+    display:block;
+    margin:0px 20px;
+    float:right;
+}
+.diary-fold>button{
+    background-color:white;
+    padding:10px 10px;
+}
