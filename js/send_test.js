@@ -4,7 +4,7 @@ document.getElementById('id-diary-save').addEventListener('click',function(){
         'title':document.getElementById('id-diary-title').value,
         'content':document.getElementById('diary-text-area').value,
     };
-    fetch('http://localhost/mintfolio/insert.php',{
+    fetch('http://localhost/diary/insert.php',{
         method:'POST',
         headers:{
             'Content-Type':'application/json'

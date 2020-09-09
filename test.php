@@ -16,7 +16,9 @@
                 {
                     $stmt->setFetchMode(PDO::FETCH_ASSOC);
                     $data = $stmt->fetchAll();
-                    echo $data[0];
+                    $obj['title']=$data[0]['title'];
+                    $obj['content']=$data[0]['content'];
+                    echo json_encode( $obj );
                 }
                 else
                 {

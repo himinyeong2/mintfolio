@@ -36,20 +36,20 @@ function setEvent(){
                 var data={
                     'id':this.getAttribute('id')
                 };
-                fetch('http://localhost/mintfolio/test.php',{
+                fetch('http://localhost/diary/test.php',{
                     method:'POST',
                     headers:{
                         'Content-Type':'application/json'
                     },
                     body:JSON.stringify(data)
                 })
-                .then(res=>res.text())
+                .then(res=>res.json())
                 .then(res=>{
                     if(res=="SUCCESS"){
                        alert( "다이어리 입력이 완료되었습니다");
                     }
-                    document.getElementById('id-diary-title').value=res;
-                    document.getElementById('diary-text-area').value=res;
+                    document.getElementById('id-diary-title').value=res['title'];
+                    document.getElementById('diary-text-area').value=res['content'];
                 })
                 .catch((err)=>{
                     console.error("에러:",err);
