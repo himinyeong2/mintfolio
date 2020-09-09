@@ -1,3 +1,10 @@
+<?php
+
+//클릭한 날의 id가 존재하면 show- diary에 보여주기 + edit, 
+
+$data = "sibar";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +20,8 @@
         <div class="card-header">
             <div class="title">Mintfolio</div>
             <div class="header-nav">
-                <a href="index.html">메인</a>
-                <a href="calendar.html">일기</a>
+                <a href="index.php">메인</a>
+                <a href="calendar.php">일기</a>
                 <a href="#">소개</a>
                 <a href="#">문의</a>
             </div>
@@ -28,7 +35,7 @@
                     <span id="current-year-month">2020-9</span>
                     <span id="next">▷</span>
                 </div>
-                <table class="calendar-table">
+                <table id="id-calendar"class="calendar-table">
                     <tr id="week-name">
                         <td>SUN</td>
                         <td>MON</td>

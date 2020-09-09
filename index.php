@@ -11,8 +11,8 @@
         <div class="card-header">
             <div class="title">Mintfolio</div>
             <div class="header-nav">
-                <a href="index.html">메인</a>
-                <a href="calendar.html">일기</a>
+                <a href="index.php">메인</a>
+                <a href="calendar.php">일기</a>
                 <a href="#">소개</a>
                 <a href="#">문의</a>
             </div>

@@ -27,6 +27,36 @@ function setCalendar(what, yy,mm){
     // 그 다음엔 매주가 시작될떄마다 그 다음 week에 요일을 채우자!
     setAllCalendar(value, lastDay[month-1]);
 }
+function setEvent(){
+    var diary = document.getElementById('show-diary');
+                document.getElementById('show-diary').style.display="inline-block";
+                document.getElementById('id-diary-date').innerHTML=this.getAttribute('id');
+                document.getElementById('id-diary-title').value="";
+                document.getElementById('diary-text-area').value="";
+                var data={
+                    'id':this.getAttribute('id')
+                };
+                fetch('http://localhost/mintfolio/test.php',{
+                    method:'POST',
+                    headers:{
+                        'Content-Type':'application/json'
+                    },
+                    body:JSON.stringify(data)
+                })
+                .then(res=>res.text())
+                .then(res=>{
+                    if(res=="SUCCESS"){
+                       alert( "다이어리 입력이 완료되었습니다");
+                    }
+                    document.getElementById('id-diary-title').value=res;
+                    document.getElementById('diary-text-area').value=res;
+                })
+                .catch((err)=>{
+                    console.error("에러:",err);
+                })
+                .finally(res=>{
+                });
+}
 function setAllCalendar(startDay,lastDay){
     var week = new Array('week-2','week-3','week-4','week-5','week-6');
     var htmlWeek = new Array();
@@ -39,12 +69,7 @@ function setAllCalendar(startDay,lastDay){
         var td = document.createElement('td');
         td.setAttribute("id",document.getElementById('current-year-month').innerHTML+"-"+i);
         td.innerHTML = i;
-        td.addEventListener('click',function(){
-            var diary = document.getElementById('show-diary');
-                document.getElementById('show-diary').style.display="inline-block";
-                document.getElementById('id-diary-date').innerHTML=this.getAttribute('id');
-            
-       });
+        td.addEventListener('click',setEvent);
         if(count==7){
             weekIndex++;
             count=0;
@@ -85,12 +110,7 @@ function makeBlank(n,k){
         if(i>n){
             td.innerHTML=++start;
             td.setAttribute("id",document.getElementById('current-year-month').innerHTML+"-"+start);
-            td.addEventListener('click',function(){
-                var diary=document.getElementById('show-diary');
-                    document.getElementById('show-diary').style.display="inline-block";
-                    document.getElementById('id-diary-date').innerHTML=this.getAttribute('id');
-                
-            });
+            td.addEventListener('click',setEvent);
             
         }
         week1_tr.appendChild(td);

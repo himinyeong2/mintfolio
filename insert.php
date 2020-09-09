@@ -1,48 +1,34 @@
 <?php
-    // error_reporting(E_ALL); 
-    // ini_set('display_errors',1); 
 
-    // include('dbcon.php');
+    $data = json_decode(file_get_contents('php://input'),true); 
+    // print_r($d_data);
+    $id = $data['id'];
+    $title=$data['title'];
+    $content=$data['content'];
 
-    // if( ($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['submit']))
-    // {
+    include('dbcon.php');
+    if( ($_SERVER['REQUEST_METHOD'] == 'POST'))
+    {
+        if(!isset($errMSG))
+        {
+            try{
+                $stmt = $con->prepare('INSERT INTO diary VALUES(:id, :title, :content)');
+                $stmt->bindParam(':id', $id);
+                $stmt->bindParam(':title', $title);
+                $stmt->bindParam(':content', $content);
 
-    //     $id=$_POST['id'];
-    //     $title=$_POST['title'];
-    //     $content=$_POST['content'];
-    //     $date=$_POST['date'];
-    //     if(!isset($errMSG))
-    //     {
-    //         try{
-    //             $stmt = $con->prepare('INSERT INTO diary VALUES(:id, :title, :content, :date)');
-    //             $stmt->bindParam(':id', $id);
-    //             $stmt->bindParam(':title', $title);
-    //             $stmt->bindParam(':content', $content);
-    //             $stmt->bindParam(':date', $date);
+                if($stmt->execute())
+                {
+                    echo "SUCCESS";
+                }
+                else
+                {
+                    $errMSG = "사용자 추가 에러";
+                }
 
-    //             if($stmt->execute())
-    //             {
-    //                 echo '<script>alert("입력완료");</script>';
-                    
-    //             }
-    //             else
-    //             {
-    //                 $errMSG = "사용자 추가 에러";
-    //             }
-
-    //         } catch(PDOException $e) {
-    //             die("Database error: " . $e->getMessage()); 
-    //         }
-    //     }
-
-    // }
-    if( ($_SERVER['REQUEST_METHOD'] == 'GET')){
-        echo "POST 됐어!";
-        echo $_GET[0];
-    }else{
-        echo "POST안됐어!";
-        echo $_SERVER['REQUEST_METHOD'];
+            } catch(PDOException $e) {
+                die("Database error: " . $e->getMessage()); 
+            }
+        }
     }
-    echo $_POST['id'];
-    echo $_POST{'title'};
 ?>
