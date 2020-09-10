@@ -16,9 +16,12 @@
                 {
                     $stmt->setFetchMode(PDO::FETCH_ASSOC);
                     $data = $stmt->fetchAll();
-                    $obj['title']=$data[0]['title'];
+                    if($data==null){
+                        echo json_encode("NODATA");
+                    }else{
                     $obj['content']=$data[0]['content'];
                     echo json_encode( $obj );
+                    }
                 }
                 else
                 {

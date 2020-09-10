@@ -29,14 +29,16 @@ $data = "sibar";
     </div>
     <div class="main">
         <div class="calendar-diary">
-            <div class="calendar">
-                <div class="calendar-nav">
-                    <span id="prev">◁</span>
-                    <span id="current-year-month">2020-9</span>
-                    <span id="next">▷</span>
-                </div>
-                <table id="id-calendar"class="calendar-table">
-                    <tr id="week-name">
+            <div class="calendar-img">
+                <img class="calendar-png" src="image/calendar.png" >
+                <div class="calendar">
+                    <div class="calendar-nav">
+                        <span id="prev">◁</span>
+                        <span id="current-year-month">2020-9</span>
+                        <span id="next">▷</span>
+                    </div>
+                    <table id="id-calendar"class="calendar-table">
+                        <tr id="week-name">
                         <td>SUN</td>
                         <td>MON</td>
                         <td>TUE</td>
@@ -44,34 +46,36 @@ $data = "sibar";
                         <td>THU</td>
                         <td>FRI</td>
                         <td>SAT</td>
-                    </tr>
-                    <tr id="week-1"></tr>
-                    <tr id="week-2"></tr>
-                    <tr id="week-3"></tr>
-                    <tr id="week-4"></tr>
-                    <tr id="week-5"></tr>
-                    <tr id="week-6"></tr>
-
-                </table>
+                        </tr>
+                        <tr id="week-1"></tr>
+                        <tr id="week-2"></tr>
+                        <tr id="week-3"></tr>
+                        <tr id="week-4"></tr>
+                        <tr id="week-5"></tr>
+                        <tr id="week-6"></tr>
+                    </table>
+                </div>
             </div>
-            <div id="show-diary" class="diary">
+           
+            <div id="id-postit" class="postit-img">
+                <img src="image/postit.png">
+                <div id="show-diary" class="diary">
                     <div id="id-diary-date" class="diary-date">
                     </div>
                     <div class="diary-fold">
-                        <button id="btn-diary-fold">접기</button>
+                        <button id="btn-diary-fold">x</button>
                     </div>
-                    <div class="diary-title">
-                        <input id="id-diary-title" type="text">
-                    </div>
-
                     <div class="diary-content">
-                        <textarea id="diary-text-area" id="" cols="30" rows="10"></textarea>
+                        <textarea id="diary-text-area" placeholder="일기를 기록하세요" cols="20" rows="6" pla></textarea>
                     </div>
                     <div class="diary-button">
+                    <input type="submit" id="id-diary-delete" name="diary-delete" value="DELETE" >
+                    <input type="submit" id="id-diary-edit" name="diary-edit" value="EDIT"  >
                         <input type="submit" id="id-diary-save" name="diary-save" value="SAVE">
-                        <input type="submit" id="id-diary-edit" name="diary-edit" value="EDIT" hidden="hidden">
-                        <input type="submit" id="id-diary-delete" name="diary-delete" value="DELETE" hidden="hidden">
+                        
+                        
                     </div>
+            </div>
             </div>
         </div>
     </div>

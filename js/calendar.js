@@ -28,15 +28,14 @@ function setCalendar(what, yy,mm){
     setAllCalendar(value, lastDay[month-1]);
 }
 function setEvent(){
-    var diary = document.getElementById('show-diary');
-                document.getElementById('show-diary').style.display="inline-block";
+    document.getElementById('id-postit');
+                document.getElementById('id-postit').style.display="inline-block";
                 document.getElementById('id-diary-date').innerHTML=this.getAttribute('id');
-                document.getElementById('id-diary-title').value="";
                 document.getElementById('diary-text-area').value="";
                 var data={
                     'id':this.getAttribute('id')
                 };
-                fetch('http://localhost/diary/test.php',{
+                fetch('http://localhost/mintfolio/test.php',{
                     method:'POST',
                     headers:{
                         'Content-Type':'application/json'
@@ -45,16 +44,22 @@ function setEvent(){
                 })
                 .then(res=>res.json())
                 .then(res=>{
-                    if(res=="SUCCESS"){
-                       alert( "다이어리 입력이 완료되었습니다");
+                    if(res=="NODATA"){//데이터가 없는 경우
+                        document.getElementById('id-diary-save').removeAttribute("hidden");
+                        document.getElementById('id-diary-edit').setAttribute("hidden","hidden");
+                        document.getElementById('id-diary-delete').setAttribute("hidden","hidden");
+                    }else{//데이터가 있는 경우
+                        document.getElementById('diary-text-area').value=res['content'];
+                        document.getElementById('id-diary-save').setAttribute("hidden","hidden");
+                        document.getElementById('id-diary-edit').removeAttribute("hidden");
+                        document.getElementById('id-diary-delete').removeAttribute("hidden");
                     }
-                    document.getElementById('id-diary-title').value=res['title'];
-                    document.getElementById('diary-text-area').value=res['content'];
                 })
                 .catch((err)=>{
                     console.error("에러:",err);
                 })
                 .finally(res=>{
+                    
                 });
 }
 function setAllCalendar(startDay,lastDay){
@@ -129,8 +134,8 @@ function removeCalendar(){
     
 }
 document.getElementById('btn-diary-fold').addEventListener('click',function(){
-    var diary = document.getElementById('show-diary');
-    diary.style.display="none";
+    var postit = document.getElementById('id-postit');
+    postit.style.display="none";
 });
 document.getElementById('prev').addEventListener('click', function () {
     var string = document.getElementById('current-year-month').innerHTML;

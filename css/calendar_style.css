@@ -1,107 +1,177 @@
-@font-face{
+@font-face {
     font-family: 'SeoulHangang';
-    src:url('../SeoulHangang_ttf/SeoulHangang.ttf') format('truetype');
+    src: url('../SeoulHangang_ttf/SeoulHangang.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Dynalight';
+    src: url('../font/Dynalight.ttf') format('truetype');
 }
 @font-face{
-    font-family:'Dynalight';
-    src:url('../font/Dynalight.ttf') format('truetype');
+    font-family:'sinbi';
+    src:url('../font/SSShinb7.ttf') format('truetype');
 }
-html,body{
-    font-family:'SeoulHangang';
-    text-align:center;
-    font-size:30PX;
-    
+html, body {
+    font-family: 'SeoulHangang';
+    text-align: center;
+    font-size: 30PX;
 }
 
-#header{
+#header {
     /* background-color:pink; */
-    padding-top:50px;
-    padding-bottom:50px;
-}
-.card-header{
-    display:inline-block;
-}
-.title{
-    font-family:'Dynalight' ;
-    font-size:70px;
-}
-.header-nav{
-    font-size:20px;
-}
-.header-nav>a{
-    color:black;
-    text-decoration:none;
-    margin:5px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
-.calendar{
-    display:inline-block;
+.card-header {
+    display: inline-block;
 }
-.calendar-table{
-    margin:0 auto;
+
+.title {
+    font-family: 'Dynalight';
+    font-size: 70px;
 }
-.calendar-nav{
+
+.header-nav {
+    font-size: 20px;
+}
+
+.header-nav>a {
+    color: black;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.calendar-img {
     position: relative;
-    margin:10px;
+    display: inline-block;
+    width:500px;
 }
-.calendar-nav>#prev{
-    position: absolute;
-    left:0px;
+.calendar-img>img{
+    width:100%;
 }
-.calendar-nav>#next{
-    position: absolute;
-    right:0px;
+.calendar-diary {
+    display: inline-block;
+    height: 100%;
+    position: relative;
 }
 
-td{
-    padding:10px;
-    margin:0px;
-    border:1px solid black;
-    border-radius: 10%;
+.calendar {
+    display: inline-block;
+    position: absolute;
+    left: 8%;
+    top: 25%;
+    font-size:28px;
+}
+
+.calendar-table {
+    margin: 0 auto;
+}
+
+.calendar-nav {
+    position: relative;
+    margin: 10px;
+}
+
+.calendar-nav>#prev {
+    position: absolute;
+    left: 0px;
+}
+
+.calendar-nav>#next {
+    position: absolute;
+    right: 0px;
+}
+
+td {
+    padding: 5px;
+    margin: 0px;
+}
+.postit-img{
+    width:400px;
+    display:inline-block;
+    position: relative;
+    top:-80px;
+    display:none;
+    color:#C26663;
+}
+.postit-img>img{
+    width:100%;
 }
 .diary{
-    vertical-align:top;
-    border:1px solid black;
-    padding:10px;
-    width:20%;
-    text-align:left;
-    display:none;
-}
-.diary-date{
-    display:inline-block;
-    margin:5px;
-}
-.diary-title{
-    margin:5px;
-}
-.diary-title>input{
-    padding:10px;
-    width:90%;
-    margin:5px 0px;
-    
-}
-.diary-content>textarea{
-    padding:10px;
-    margin:5px auto;
-    width:90%;
+    position: absolute;
+    /* margin-right: 10px; */
+    text-align: left;
+    vertical-align: top;
+    display: inline-block;
+    left:8%;
+    top:10%;
+    -moz-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	-o-transfrom: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+	transform: rotate(-3deg);
 
-    min-height:180px;
+
 }
-.diary-button{
-    text-align:center;
+
+.diary-date {
+    display: inline-block;
+    margin: 5px;
+    font-family:'sinbi';
 }
-.diary-button>input{
-    text-align:center;
-    background-color:white;
-    padding:10px 20px;
-    /* display:none; */
+
+.diary-title {
+    margin: 5px;
 }
-.diary-fold{
-    display:block;
-    margin:0px 20px;
+
+.diary-title>input {
+    padding: 10px;
+    font-size: 20px;
+    width: 85%;
+    margin: 5px 0px;
+    height: 80%;
+    background:transparent;
+}
+
+.diary-content>textarea {
+    margin: 5px auto 5px 8px;
+    font-size: 30px;
+    color:#C26663;
+    min-height: 180px;
+    background:transparent;
+    font-family: 'sinbi';
+    border:none;
+}
+.diary-content>textarea:focus{
+    outline:none;
+}
+.diary-button {}
+
+#id-diary-save, #id-diary-edit,#id-diary-delete {
     float:right;
 }
-.diary-fold>button{
-    background-color:white;
-    padding:10px 10px;
+
+
+.diary-button>input {
+    text-align: left;
+    color:#C26663;
+    margin: 5px;
+    background-color:transparent;
+    border:none;
+    font-size: 20px;
+    font-family:'sinbi';
+}
+
+.diary-fold {
+    display: block;
+    margin: 0px 20px;
+    float: right;
+}
+
+.diary-fold>button {
+    font-size:30px;
+    border:none;
+    color:#C26663;
+    background-color:transparent;
 }
