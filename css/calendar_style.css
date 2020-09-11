@@ -142,6 +142,7 @@ td {
     background:transparent;
     font-family: 'sinbi';
     border:none;
+    resize: none;
 }
 .diary-content>textarea:focus{
     outline:none;

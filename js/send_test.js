@@ -44,7 +44,7 @@ document.getElementById('id-diary-edit').addEventListener('click',function(){
         if(res=="SUCCESS"){
            alert( "다이어리 수정이 완료되었습니다");
            document.getElementById('diary-text-area').value="";
-           document.getElementById('show-diary').style.display="none";
+           document.getElementById('id-postit').style.display="none";
         }
     })
     .catch((err)=>{
@@ -70,9 +70,8 @@ document.getElementById('id-diary-delete').addEventListener('click',function(){
     .then(res=>{
         if(res=="SUCCESS"){
            alert( "다이어리 삭제가 완료되었습니다");
-           document.getElementById('id-diary-title').value="";
            document.getElementById('diary-text-area').value="";
-           document.getElementById('show-diary').style.display="none";
+           document.getElementById('id-postit').style.display="none";
         }
     })
     .catch((err)=>{
