@@ -51,6 +51,7 @@ html, body {
     width:100%;
 }
 .calendar-diary {
+    font-family:'sinbi';
     display: inline-block;
     height: 100%;
     position: relative;
@@ -59,9 +60,9 @@ html, body {
 .calendar {
     display: inline-block;
     position: absolute;
-    left: 8%;
-    top: 25%;
-    font-size:28px;
+    left: 12%;
+    top: 20%;
+    font-size:24px;
 }
 
 .calendar-table {
@@ -111,14 +112,11 @@ td {
 	-o-transfrom: rotate(-3deg);
 	-webkit-transform: rotate(-3deg);
 	transform: rotate(-3deg);
-
-
 }
 
 .diary-date {
     display: inline-block;
     margin: 5px;
-    font-family:'sinbi';
 }
 
 .diary-title {
@@ -157,10 +155,9 @@ td {
 .diary-button>input {
     text-align: left;
     color:#C26663;
-    margin: 5px;
     background-color:transparent;
     border:none;
-    font-size: 20px;
+    font-size: 25px;
     font-family:'sinbi';
 }
 
@@ -168,6 +165,7 @@ td {
     display: block;
     margin: 0px 20px;
     float: right;
+    
 }
 
 .diary-fold>button {

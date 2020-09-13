@@ -30,22 +30,22 @@ $data = "sibar";
     <div class="main">
         <div class="calendar-diary">
             <div class="calendar-img">
-                <img class="calendar-png" src="image/calendar.png" >
+                <img class="calendar-png" src="image/calendar.png">
                 <div class="calendar">
                     <div class="calendar-nav">
                         <span id="prev">◁</span>
                         <span id="current-year-month">2020-9</span>
                         <span id="next">▷</span>
                     </div>
-                    <table id="id-calendar"class="calendar-table">
+                    <table id="id-calendar" class="calendar-table">
                         <tr id="week-name">
-                        <td>SUN</td>
-                        <td>MON</td>
-                        <td>TUE</td>
-                        <td>WED</td>
-                        <td>THU</td>
-                        <td>FRI</td>
-                        <td>SAT</td>
+                            <td>SUN</td>
+                            <td>MON</td>
+                            <td>TUE</td>
+                            <td>WED</td>
+                            <td>THU</td>
+                            <td>FRI</td>
+                            <td>SAT</td>
                         </tr>
                         <tr id="week-1"></tr>
                         <tr id="week-2"></tr>
@@ -56,7 +56,7 @@ $data = "sibar";
                     </table>
                 </div>
             </div>
-           
+
             <div id="id-postit" class="postit-img">
                 <img src="image/postit.png">
                 <div id="show-diary" class="diary">
@@ -69,20 +69,18 @@ $data = "sibar";
                         <textarea id="diary-text-area" placeholder="일기를 기록하세요" cols="20" rows="6" pla></textarea>
                     </div>
                     <div class="diary-button">
-                    <input type="submit" id="id-diary-delete" name="diary-delete" value="DELETE" >
-                    <input type="submit" id="id-diary-edit" name="diary-edit" value="EDIT"  >
+                        <input type="submit" id="id-diary-delete" name="diary-delete" value="DELETE">
+                        <input type="submit" id="id-diary-edit" name="diary-edit" value="EDIT">
                         <input type="submit" id="id-diary-save" name="diary-save" value="SAVE">
-                        
-                        
                     </div>
-            </div>
+                </div>
             </div>
         </div>
     </div>
-    
+
     <script type="text/javascript" src="js/calendar.js"></script>
     <script type="text/javascript" src="js/send_test.js"></script>
-    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </body>
 
 </html>

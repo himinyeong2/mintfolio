@@ -1,0 +1,76 @@
+
+body,html{
+    margin:0 0;
+}
+#header{
+    height: 100%;
+}
+#main{
+    padding-bottom:200px ;
+}
+.main-in{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../image/keyboard.jpeg);
+    color:white;
+    -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
+    background-size: cover; 
+}
+.main-title{
+    display:inline-block;
+    padding:10%;
+}
+.main-title>h1{
+    text-align: center;
+    overflow: hidden;
+    /* font-size: 100%; */
+    border-right: .15em solid #fff;
+    white-space: nowrap;
+    /* keeps content in one line */
+    letter-spacing: .15em;
+    animation: typing 2.5s steps(22, end), blink-caret .75s step-end infinite;
+}
+.about-me{
+    display:block;
+    width:100%;
+    margin:7% 0px ;
+    text-align:left;
+    background-color: black;
+    color:white;
+    padding:2% 0px;
+}
+.about-me-title{
+    display:inline-block;
+    padding:6% 2%;
+    margin:0px 5%;
+    /* max-width:20%; */
+    vertical-align: top;
+}
+.about-me-content{
+    display:inline-block;
+    max-width:60%;
+    text-align:left;
+    font-size:25px;
+}
+.about-me-content-intro{
+    color:#B8B2AB;
+    font-size:20px;
+    font-style:italic;
+}
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 17em;
+    }
+}
+@keyframes blink-caret {
+    from, to {
+      border-color: white;
+    }
+    0%,100%{
+        border-color:transparent;
+    }
+    50%{
+        border-color:white;
+    }
+}
