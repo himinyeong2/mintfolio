@@ -6,18 +6,16 @@
     font-family:'Dynalight';
     src:url('../font/Dynalight.ttf') format('truetype');
 }
+@font-face{
+    font-family:'NanumSquare';
+    src:url('../font/NanumSquare_acB.ttf') format('truetype');
+}
 html,body{
     font-family:'SeoulHangang';
     text-align:center;
     font-size:30PX;
-    
 }
 
-#header{
-    /* background-color:pink; */
-    padding-top:50px;
-    padding-bottom:50px;
-}
 .card-header{
     display:inline-block;
 }
@@ -54,7 +52,6 @@ html,body{
 }
 .img-card>img:hover{
     filter:brightness(50%);
-
 }
 #modal-detail{
     font-size:20px;
