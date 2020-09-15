@@ -7,6 +7,7 @@ body,html{
     background-color: white;
     width:100%;
     position: fixed;
+    z-index: 99999;
 }
 #main{
     padding:5% 0;
@@ -37,19 +38,23 @@ body,html{
     animation: typing 2.5s steps(22, end), blink-caret .75s step-end infinite;
 }
 #about-me{
+
     display:block;
     width:100%;
+    height:300px;
+    padding:100px 0;
+}
+.about-me-card{
     text-align:left;
     background-color: black;
     color:white;
-    padding:100px 0px;
-    height:300px;
-
+    height: 100%;
+    padding:100px 0;
+    position: relative;
 }
 .about-me-title{
     display:inline-block;
     height: 100%;
-    vertical-align: top;
     position: relative;
     margin:0 5%;
 }
@@ -59,19 +64,23 @@ body,html{
 }
 .about-me-content{
     display:inline-block;
+    vertical-align: top;
     max-width:60%;
     text-align:left;
-    font-size:25px;
+    font-size:30px;
+    position: relative;
+    top:-10%;
 }
 .about-me-content-intro{
     color:#B8B2AB;
-    font-size:20px;
+    font-size:25px;
     font-style:italic;
 }
 #skills{
     background-color:white;
     color:black;
-    margin:50px 0;
+    padding:100px 0;
+    margin-top:100px;
 }
 .skills-in-item{
     display:inline-block;
@@ -97,7 +106,10 @@ body,html{
     padding-bottom:20px;
     border:1px solid black;
 }
-
+.portfolio-card:hover{
+    filter:brightness(90%);
+    background-color:gray;
+}
 .portfolio-col{
     display: inline-block;
     vertical-align: top;
@@ -122,6 +134,36 @@ body,html{
     font-size:20px;
     font-style:italic;
 }
+#modal-detail{
+    font-size:20px;
+    text-align:left;
+    line-height: 150%;
+}
+#modal-detail{
+    font-size:25px bold;
+}
+#modal{
+    position: relative;
+    display:none;
+    width:300px;
+    padding:50px; 
+    background-color:#fefefe;
+    border:1px solid #888;
+    border-radius:3px;
+}
+#modal .modal_close_btn{
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+.inner-detail{
+    display:none;
+}
+
+#modal-detail-img, #modal-title,#modal-detail{
+    margin:10px;
+}
+
 @keyframes typing {
     from {
       width: 0;

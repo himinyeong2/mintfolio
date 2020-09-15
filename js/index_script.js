@@ -1,5 +1,5 @@
 function modal(id) {
-    var zIndex = 9999;
+    var zIndex = 999999;
     var modal = document.getElementById(id);
 
     // 모달 div 뒤에 희끄무레한 레이어
@@ -46,8 +46,7 @@ Element.prototype.setStyle = function(styles) {
     for (var k in styles) this.style[k] = styles[k];
     return this;
 };
-document.getElementById('id-chatting-img').addEventListener('focus',function(){
-});
+
 document.getElementById('id-chatting-img').addEventListener('click', function() {
     // 모달창 띄우기
     modal('modal');
