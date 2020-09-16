@@ -2,12 +2,10 @@ body,html{
     margin:0 0;
     width:100%;
     height:100%;
-    background-color:#F9D5BD;
+    background-color:#FAE7E1;
 }
 #nav{
-    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(image/flower3.jpg);
-    color:white;
-    -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
+    background-color:#B5B2B8;
     height:100%;
     width:15%;
     position: fixed;
@@ -18,55 +16,38 @@ body,html{
     list-style-type: none;
     font-size:30px;
     margin:40px 10px;
-    position: relative;
-    top:30%;
+    /* position: relative;
+    top:30%; */
     text-align: center;
 }
 #nav>li:hover{
-    color:#E0808D
+    color:#E7C2B6;
 }
-#main{
+#content{
+    position: relative;
     left:15%;
     width:85%;
-    position: relative;
     height:100%;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(image/flower_back.jpg);
-    color:#fff;
-    -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
-    background-size: cover; 
+}
+#home{
+    width:100%;
+    height:100%;
     display: block;
 }
-.main-title{
-    display:inline-block;
+
+#about-me{
+    display:none;
+    height:100%;
+    width:100%;
 }
-.main-title>h1{
-    position: absolute;
-    left:20%;
-    top:40%;
-    overflow: hidden;
-    font-size: 50px;
-    border-right: .15em solid #fff;
-    white-space: nowrap;
-    /* keeps content in one line */
-    letter-spacing: .15em;
-    animation: typing 3.5s steps(22, end), blink-caret .75s step-end infinite;
+.my-ficture{
+    width:250px;
+    height:250px;
+    position: relative;
+    left:10%;
 }
-@keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 25em;
-    }
-}
-@keyframes blink-caret {
-    from, to {
-      border-color: white;
-    }
-    0%,100%{
-        border-color:transparent;
-    }
-    50%{
-        border-color:white;
-    }
+.my-ficture>img{
+    width:100%;
+    height: 100%;
+    border-radius: 13%;
 }
