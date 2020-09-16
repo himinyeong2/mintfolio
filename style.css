@@ -23,6 +23,14 @@ body,html{
 #nav>li:hover{
     color:#E7C2B6;
 }
+.my-ficture{
+    width:90%;
+}
+.my-ficture>img{
+    width:100%;
+    border-radius: 13%;
+}
+
 #content{
     position: relative;
     left:15%;
@@ -30,24 +38,106 @@ body,html{
     height:100%;
 }
 #home{
-    width:100%;
-    height:100%;
-    display: block;
-}
-
-#about-me{
-    display:none;
-    height:100%;
-    width:100%;
-}
-.my-ficture{
-    width:250px;
-    height:250px;
     position: relative;
-    left:10%;
-}
-.my-ficture>img{
     width:100%;
-    height: 100%;
-    border-radius: 13%;
+    height:100%;
+    display: none;
+}
+.home-in{
+    position: absolute;
+    left:7%;
+    top:0px;
+}
+.home-first, .home-second, .home-third{
+    margin: 50px 30px;
+}
+.title{
+    display:inline-block;
+    font-size:50px;
+    color:#DD9CA2;
+    margin:15px 0px;
+    font-weight: bold;
+}
+.detail{
+    font-size:25px;
+    color:#7F7F7F;
+    font-style: italic;
+}
+.attachment{
+    position: relative;
+    display:block;
+    width:fit-content;
+    padding:15px 15px;
+    color:white;
+    background-color:#F0A7A3;
+    text-decoration: none;
+}
+.home-third{
+    display:inline-block;
+    position: relative;
+}
+.home-third>.title{
+    display: inline-block;
+}
+.paper-plane{
+    width:60px;
+    display:inline-block;
+}
+.paper-plane>img{
+    width:100%;
+}
+.contact{
+    background-color:#F0A7A3 ;
+    border:none;
+    font-size:20px;
+    /* margin-bottom:10px; */
+    margin:10px 5px 10px 0;
+    color:white;
+}
+textarea{
+    resize:none;
+}
+.contact-name,.contact-submit{
+    padding:10px 0;
+    width:100px;
+}
+.contact-email, .contact-num{
+    padding:10px 0;
+}
+.contact-submit{
+    vertical-align: bottom;
+    position: relative;
+    bottom: 4px;
+}
+.contact-img{
+    width:60px;
+    height: 60px;
+    margin-right:20px;
+
+}
+#about-me{
+    display:block;
+    height:100%;
+    width:100%;
+}
+.about-me-in{
+    position: absolute;
+    left:7%;
+    top:10%;
+}
+.skills-in-item{
+    display:inline-block;
+    width:100px;
+    height: 100px;
+    margin:10px;
+}
+.skills-in-item:hover{
+    filter:brightness(40%);
+}
+.skills-in-item>img{
+    width:100%;
+    height:100%;
+}
+.who-am-i, .skill{
+    display:inline-block;
 }
