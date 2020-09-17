@@ -37,11 +37,12 @@ body,html{
     width:85%;
     height:100%;
 }
+/* home 화면 */
 #home{
     position: relative;
     width:100%;
     height:100%;
-    display: none;
+    display: block;
 }
 .home-in{
     position: absolute;
@@ -56,7 +57,6 @@ body,html{
     font-size:50px;
     color:#DD9CA2;
     margin:15px 0px;
-    font-weight: bold;
 }
 .detail{
     font-size:25px;
@@ -67,9 +67,10 @@ body,html{
     position: relative;
     display:block;
     width:fit-content;
+    border-radius: 10%;
     padding:15px 15px;
     color:white;
-    background-color:#F0A7A3;
+    background-color:#E7C2B6;
     text-decoration: none;
 }
 .home-third{
@@ -87,7 +88,7 @@ body,html{
     width:100%;
 }
 .contact{
-    background-color:#F0A7A3 ;
+    background-color:#E7C2B6 ;
     border:none;
     font-size:20px;
     /* margin-bottom:10px; */
@@ -115,8 +116,9 @@ textarea{
     margin-right:20px;
 
 }
+/* about me 화면 */
 #about-me{
-    display:block;
+    display:none;
     height:100%;
     width:100%;
 }
@@ -140,4 +142,13 @@ textarea{
 }
 .who-am-i, .skill{
     display:inline-block;
+}
+/* experiences 화면 */
+
+#experiences{
+    width:100%;
+    height:100%;
+}
+.card>img{
+    
 }
