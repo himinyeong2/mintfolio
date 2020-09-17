@@ -56,7 +56,6 @@ body,html{
     font-size:50px;
     color:#DD9CA2;
     margin:15px 0px;
-    font-weight: bold;
 }
 .detail{
     font-size:25px;
@@ -140,4 +139,8 @@ textarea{
 }
 .who-am-i, .skill{
     display:inline-block;
+    margin-right:50px;
+}
+.who-am-i{
+    vertical-align: top;
 }
