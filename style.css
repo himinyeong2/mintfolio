@@ -12,15 +12,16 @@ body,html{
     z-index: 100;
     /* background-color:#F7BDAB; */
 }
-#nav>li{
-    list-style-type: none;
+#nav>a{
+    display:block;
     font-size:30px;
     margin:40px 10px;
-    /* position: relative;
-    top:30%; */
     text-align: center;
+    text-decoration: none;
+    color:black;
 }
-#nav>li:hover{
+
+#nav>a:hover{
     color:#E7C2B6;
 }
 .my-ficture{
@@ -37,22 +38,23 @@ body,html{
     width:85%;
     height:100%;
 }
+/* home 화면 */
 #home{
-    position: relative;
+    position: absolute;
+    left:0%;
+    top:0px;
     width:100%;
     height:100%;
     display: none;
 }
 .home-in{
-    position: absolute;
-    left:7%;
-    top:0px;
+    margin:0 5%;
 }
 .home-first, .home-second, .home-third{
     margin: 50px 30px;
 }
 .title{
-    display:inline-block;
+    display:block;
     font-size:50px;
     color:#DD9CA2;
     margin:15px 0px;
@@ -66,9 +68,10 @@ body,html{
     position: relative;
     display:block;
     width:fit-content;
+    border-radius: 10%;
     padding:15px 15px;
     color:white;
-    background-color:#F0A7A3;
+    background-color:#E7C2B6;
     text-decoration: none;
 }
 .home-third{
@@ -86,7 +89,7 @@ body,html{
     width:100%;
 }
 .contact{
-    background-color:#F0A7A3 ;
+    background-color:#E7C2B6 ;
     border:none;
     font-size:20px;
     /* margin-bottom:10px; */
@@ -114,8 +117,9 @@ textarea{
     margin-right:20px;
 
 }
+/* about me 화면 */
 #about-me{
-    display:block;
+    display:none;
     height:100%;
     width:100%;
 }
@@ -143,4 +147,111 @@ textarea{
 }
 .who-am-i{
     vertical-align: top;
+}
+/* experiences 화면 */
+
+#experiences{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+.experiences-in{
+    margin:20px;
+}
+.card{
+    display:inline-block;
+    background-color:#E7C2B6;
+}
+.portfolio-card{
+    position: relative;
+    width:255px;
+    height:340px;
+}
+.award-card{
+    position: relative;
+    width:300px;
+    height:340px;
+    margin-right: 5px;
+}
+.img-in-card{
+    position: absolute;
+    left:10%;
+    top:5%;
+    width:200px;
+    height:200px;
+}
+.img-in-card>img{
+    width:100%;
+    height:100%;
+    border-radius: 10%;
+}
+.text-in-card{
+    position: absolute;
+    left:10%;
+    bottom:5%;
+}
+.title-in-card,.detail-in-card,.lang-in-card{
+    /* margin-top:5px; */
+    /* margin-bottom:5px; */
+    margin:10px 0;
+}
+.award-card>.img-in-card{
+    width:267px;
+    left:5%;
+    top:8%;
+}
+.award-card>.text-in-card{
+    bottom:2%;
+}
+.title-in-card{
+    font-size:25px;
+}
+.detail-in-card{
+    font-size:15px;
+}
+.lang-in-card{
+    color:#7F7F7F;
+    font-style:italic;
+}
+/* 게시판 */
+#board{
+    position: absolute;
+    left:0%;
+    top:0px;
+    height:100%;
+    width:100%;
+}
+
+.board-table{
+    position: relative;
+    display:block;
+    padding-bottom:50px;
+    width:80%;
+}
+.board-table>table{
+    width:100%;
+}
+.column-name{
+    background-color: #E7C2B6;
+}
+td{
+    text-align:center;    
+}
+td>a{
+    text-decoration: none;
+    color:black;
+}
+.board-btn{
+    padding:10px 10px;
+    background-color:#E7C2B6;
+    border:none;
+    border-radius: 5px;
+}
+#id-write-button{
+    position: absolute;
+    display:block;
+    right:0px;
+    bottom:0px;
 }
