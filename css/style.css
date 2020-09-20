@@ -1,92 +1,133 @@
-
 body,html{
     margin:0 0;
-}
-#header{
-    padding:33px 0;
-    background-color: white;
     width:100%;
+    height:100%;
+    background-color:#FAE7E1;
+}
+#nav{
+    background-color:#B5B2B8;
+    height:100%;
+    width:15%;
     position: fixed;
-    z-index: 99999;
+    z-index: 100;
+    /* background-color:#F7BDAB; */
 }
-#main{
-    padding:5% 0;
-    margin-bottom:50px;
-}
-.main-in{
-    position: relative;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../image/keyboard.jpeg);
-    color:white;
-    -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
-    background-size: cover; 
-    padding-bottom:10%;
-}
-.main-title{
-    display:inline-block;
-    padding:10%;
-}
-.main-title>h1{
-    position: absolute;
-    left:20%;
-    top:30%;
-    overflow: hidden;
-    /* font-size: 100%; */
-    border-right: .15em solid #fff;
-    white-space: nowrap;
-    /* keeps content in one line */
-    letter-spacing: .15em;
-    animation: typing 2.5s steps(22, end), blink-caret .75s step-end infinite;
-}
-#about-me{
-
+#nav>a{
     display:block;
+    font-size:30px;
+    margin:40px 10px;
+    text-align: center;
+    text-decoration: none;
+    color:black;
+}
+
+#nav>a:hover{
+    color:#E7C2B6;
+}
+.my-ficture{
+    width:90%;
+}
+.my-ficture>img{
     width:100%;
-    height:300px;
-    padding:100px 0;
+    border-radius: 13%;
 }
-.about-me-card{
-    text-align:left;
-    background-color: black;
-    color:white;
-    height: 100%;
-    padding:100px 0;
+
+#content{
     position: relative;
+    left:15%;
+    width:85%;
+    height:100%;
 }
-.about-me-title{
-    display:inline-block;
-    height: 100%;
-    position: relative;
+/* home 화면 */
+#home{
+    display: block;
+    position: absolute;
+    left:0%;
+    top:0px;
+    width:100%;
+    height:100%;
+}
+.home-in{
     margin:0 5%;
 }
-.about-me-title>span{
-    position: relative;
-    top:40%;
+.home-first, .home-second, .home-third{
+    margin: 50px 30px;
 }
-.about-me-content{
-    display:inline-block;
-    vertical-align: top;
-    max-width:60%;
-    text-align:left;
-    font-size:30px;
-    position: relative;
-    top:-10%;
+.title{
+    display:block;
+    font-size:50px;
+    color:#DD9CA2;
+    margin:15px 0px;
 }
-.about-me-content-intro{
-    color:#B8B2AB;
+.detail{
     font-size:25px;
-    font-style:italic;
+    color:#7F7F7F;
+    font-style: italic;
 }
-#skills{
-    background-color:white;
-    color:black;
-    padding:100px 0;
-    margin-top:100px;
+.attachment{
+    position: relative;
+    display:block;
+    width:fit-content;
+    border-radius: 10%;
+    padding:15px 15px;
+    color:white;
+    background-color:#E7C2B6;
+    text-decoration: none;
+}
+.home-third>.title{
+    display: inline-block;
+}
+.paper-plane{
+    width:60px;
+    display:inline-block;
+}
+.paper-plane>img{
+    width:100%;
+}
+.input-text{
+    background-color:#E7C2B6 ;
+    border:none;
+    font-size:20px;
+    /* margin-bottom:10px; */
+    margin:10px 5px 10px 0;
+    color:white;
+}
+textarea{
+    resize:none;
+}
+.contact-name,.contact-submit{
+    padding:10px 0;
+    width:100px;
+}
+.contact-email, .contact-num{
+    padding:10px 0;
+}
+.contact-submit{
+    vertical-align: bottom;
+    position: relative;
+    bottom: 4px;
+}
+.contact-img{
+    width:60px;
+    height: 60px;
+    margin-right:20px;
+
+}
+/* about me 화면 */
+#about-me{
+    height:100%;
+    width:100%;
+}
+.about-me-in{
+    position: absolute;
+    left:7%;
+    top:10%;
 }
 .skills-in-item{
     display:inline-block;
-    width:80px;
-    height: 80px;
-    margin:0 25px;
+    width:100px;
+    height: 100px;
+    margin:10px;
 }
 .skills-in-item:hover{
     filter:brightness(40%);
@@ -95,91 +136,194 @@ body,html{
     width:100%;
     height:100%;
 }
-#portfolio{
+.who-am-i, .skill{
+    display:inline-block;
+    margin-right:50px;
+}
+.who-am-i{
+    vertical-align: top;
+}
+/* experiences 화면 */
+
+#experiences{
+    position: absolute;
+    left:0;
+    top:0;
     width:100%;
-    padding: 100px 0;
+    height:100%;
+}
+.experiences-in{
+    margin:20px;
+}
+.card{
+    display:inline-block;
+    background-color:#E7C2B6;
 }
 .portfolio-card{
     position: relative;
-    width:500px;
-    margin:10px;
-    padding-bottom:20px;
-    border:1px solid black;
+    width:255px;
+    height:340px;
 }
-.portfolio-card:hover{
-    filter:brightness(90%);
-    background-color:gray;
-}
-.portfolio-col{
-    display: inline-block;
-    vertical-align: top;
-}
-.portfolio-img{
-    display:inline-block;
-    width:20%;
-}
-.portfolio-img>img{
-    width:100%;
-    border-radius: 50%;
-}
-.portfolio-text{
-    width:300px;
+.award-card{
     position: relative;
-    left:2%;
-    display: inline-block;
-    text-align:left;
+    width:300px;
+    height:340px;
+    margin-right: 5px;
 }
-.portfolio-lang{
-    color:#B8B2AB;
-    font-size:20px;
+.img-in-card{
+    position: absolute;
+    left:10%;
+    top:5%;
+    width:200px;
+    height:200px;
+}
+.img-in-card>img{
+    width:100%;
+    height:100%;
+    border-radius: 10%;
+}
+.text-in-card{
+    position: absolute;
+    left:10%;
+    bottom:5%;
+}
+.title-in-card,.detail-in-card,.lang-in-card{
+    /* margin-top:5px; */
+    /* margin-bottom:5px; */
+    margin:10px 0;
+}
+.award-card>.img-in-card{
+    width:267px;
+    left:5%;
+    top:8%;
+}
+.award-card>.text-in-card{
+    bottom:2%;
+}
+.title-in-card{
+    font-size:25px;
+}
+.detail-in-card{
+    font-size:15px;
+}
+.lang-in-card{
+    color:#7F7F7F;
     font-style:italic;
 }
-#modal-detail{
-    font-size:20px;
-    text-align:left;
-    line-height: 150%;
+/* 게시판 */
+#board{
+    position: absolute;
+    left:0%;
+    top:0px;
+    height:100%;
+    width:100%;
 }
-#modal-detail{
-    font-size:25px bold;
-}
-#modal{
+.board-in{
     position: relative;
+    top:10%;
+    left:10%;
+    display: inline-block;
+    width:70%;
+    height:60%;
+}
+.board-title{
+    text-align:center;
+}
+.board-table{
+    position: relative;
+    display:block;
+    padding-bottom:50px;
+    width:100%;
+}
+.board-table>table{
+    width:100%;
+}
+.column-name{
+    background-color: #E7C2B6;
+}
+.column-name>td{
+    padding:10px 0;
+    color:white;
+}
+td{
+    text-align:center;    
+    font-size:20px;
+}
+td>a{
+    text-decoration: none;
+    color:black;
+}
+.board-btn{
+    padding:10px 10px;
+    background-color:#E7C2B6;
+    border:none;
+    border-radius: 5px;
+}
+#id-write-button{
+    position: absolute;
+    display:block;
+    right:0px;
+    bottom:-10px;
+    color:white;
+    font-size:15px;
+    padding:15px;
+}
+/* 글쓰기 화면 */
+#write{
+    position: absolute;
+    left:0%;
+    top:0px;
+    height:100%;
+    width:100%;
+    text-align:center;
+}
+.write-in{
+    display:inline-block;
+    position: relative;
+    top:10%;
+}
+.write-text-field{
+    height:40px;
+    font-size:25px;
+}
+.write-row>div{
+    display:inline-block;
+}
+.write-row-label{
+    font-size:25px;
+}
+.write-select-box{
+    height:45px;
+}
+.name-text-field{
+    width:140px;
+}
+.pw-text-field{
+    width:130px;
+}
+.title-text-field{
+    width:570px;
+}
+.textarea-field{
+    width:630px;
+    height:400px;
+}
+.write-insert-btn{
+    display:block;
+    width:500px;
+    padding:8px 0;
+    font-size:25px;
+    margin: 0 auto;
+}
+/* show-diary */
+#id-board-edit,#id-edit,#id-board-delete{
+    display:inline-block;
+    width:200px;
+    height:50px;
+    font-size:20px;
+    margin:0;
+}
+#id-edit{
     display:none;
-    width:300px;
-    padding:50px; 
-    background-color:#fefefe;
-    border:1px solid #888;
-    border-radius:3px;
-}
-#modal .modal_close_btn{
-    position:absolute;
-    top:10px;
-    right:10px;
-}
-.inner-detail{
-    display:none;
-}
-
-#modal-detail-img, #modal-title,#modal-detail{
-    margin:10px;
-}
-
-@keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 17em;
-    }
-}
-@keyframes blink-caret {
-    from, to {
-      border-color: white;
-    }
-    0%,100%{
-        border-color:transparent;
-    }
-    50%{
-        border-color:white;
-    }
+    margin: 0 auto;
 }
