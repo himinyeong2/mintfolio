@@ -73,12 +73,8 @@ function gotoEdit(){
             }
         })
         .catch((err)=>{
-            console.error("에러:",err);
+            console.error("에러:",err);s
         });
-<<<<<<< HEAD
-    
-=======
->>>>>>> cd7681403ba5af82614a9e4e601107175b54f85f
 }
 document.getElementById('id-board-edit').addEventListener('click', gotoEditPage);
 document.getElementById('id-board-delete').addEventListener('click', gotoDelete);

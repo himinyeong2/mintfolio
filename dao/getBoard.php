@@ -1,6 +1,6 @@
 <?php
 
-function getDiary($dno){
+function getBoard($dno){
     include('dao/dbcon.php');
 
     $result;

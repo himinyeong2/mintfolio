@@ -1,46 +1,22 @@
 <?php
 include 'nav.php';
-<<<<<<< HEAD
-include 'dao/dbcon.php';
-$dno=$_GET['dno'];
-$select_stmt = $con->prepare("SELECT * FROM Board WHERE dno=:dno");
-$select_stmt->bindParam(':dno',$dno);
-$select_stmt->execute();
-$result = $select_stmt->fetchAll(PDO::FETCH_ASSOC);
-=======
-include 'dao/getDiary.php';
+include 'dao/getBoard.php';
 
 $dno=$_GET['dno'];
-$result = getDiary($dno);
->>>>>>> cd7681403ba5af82614a9e4e601107175b54f85f
+$result = getBoard($dno);
 ?>
     <div id=content>
-        <div id="write">
+        <div id="write"><a href="board.php" class="back-button">BACK</a>
             <div class="write-in">
                 <div class="title">글 쓰기</div>
                 <div class="write-row">
                     <div class="write-row-in">
                         <label class="write-row-label" >카테고리</label>
-<<<<<<< HEAD
-                        <select id="id-write-category" class="input-text write-select-box"  disabled="disabled">
-                            <option default="default">선택</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                        </select>
-                        <label class="write-row-label">이름</label>
-                        <input type="text" id="id-write-name" class="input-text write-text-field name-text-field" disabled="disabled" value=<?php echo $result[0]['writer']; ?>>
-                    </div>
-                    <div class="write-row-in">
-                        <label class="write-row-label" >비밀번호</label>
-                        <input type="password" id="id-write-pw" class="input-text write-text-field pw-text-field" disabled="disabled" value=<?php echo $result[0]['pw']; ?> >
-=======
                         <select id="id-write-category"  class="input-text write-select-box" disabled="disabled">
-                            <option default="default">선택</option>
-                            <option>STUDY</option>
-                            <option>WOKR DIARY</option>
-                            <option>Q&A</option>
+                        <option></option>
+                    <option value="STUDY">STUDY</option>
+                    <option value="WORK_DIARY">WORK_DIARY</option>
+                    <option value="QnA">Q&A</option>
                         </select>
                         <label class="write-row-label">이름</label>
                         <input type="text" id="id-write-name" class="input-text write-text-field name-text-field" disabled="disabled" value="<?php echo $result[0]['writer']; ?>">
@@ -48,16 +24,11 @@ $result = getDiary($dno);
                     <div class="write-row-in">
                         <label class="write-row-label" >비밀번호</label>
                         <input type="password" id="id-write-pw" class="input-text write-text-field pw-text-field" disabled="disabled" value="<?php echo $result[0]['pw']; ?>" >
->>>>>>> cd7681403ba5af82614a9e4e601107175b54f85f
                     </div>
                 </div>
                 <div class="write-row">
                     <label class="write-row-label" >제목</label>
-<<<<<<< HEAD
-                    <input   type="text" class="input-text write-text-field title-text-field"  id="id-write-title" disabled="disabled" value=<?php echo $result[0]['title']; ?>>
-=======
                     <input type="text" class="input-text write-text-field title-text-field"  id="id-write-title" disabled="disabled" value="<?php echo $result[0]['title']; ?>">
->>>>>>> cd7681403ba5af82614a9e4e601107175b54f85f
                 </div>
                 <div class="write-row">
                     <textarea   class="input-text write-text-field textarea-field" id="id-write-textarea" disabled="disabled" ><?php echo $result[0]['contents'] ;?></textarea>
