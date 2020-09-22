@@ -294,6 +294,9 @@ td>a{
 }
 .write-select-box{
     height:45px;
+    width:100px;
+    font-size:18px;
+
 }
 .name-text-field{
     width:140px;
