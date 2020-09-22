@@ -107,11 +107,14 @@ textarea{
     position: relative;
     bottom: 4px;
 }
+<<<<<<< HEAD
 .contact-textarea{
     display:inline-block;
     width:605px;
     height:150px;
 }
+=======
+>>>>>>> cd7681403ba5af82614a9e4e601107175b54f85f
 .contact-img{
     width:60px;
     height: 60px;
@@ -299,6 +302,12 @@ td>a{
 }
 .write-select-box{
     height:45px;
+<<<<<<< HEAD
+=======
+    width:100px;
+    font-size:18px;
+
+>>>>>>> cd7681403ba5af82614a9e4e601107175b54f85f
 }
 .name-text-field{
     width:140px;
