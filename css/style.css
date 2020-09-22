@@ -107,6 +107,11 @@ textarea{
     position: relative;
     bottom: 4px;
 }
+.contact-textarea{
+    display:inline-block;
+    width:605px;
+    height:150px;
+}
 .contact-img{
     width:60px;
     height: 60px;

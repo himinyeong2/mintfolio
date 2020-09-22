@@ -3,6 +3,7 @@ function gotoEditPage(){
     if(document.getElementById('id-write-pw').value!=pw){
         alert("비밀번호가 일치하지 않습니다.");
     }else{
+        document.getElementById('id-write-category').removeAttribute('disabled');
         document.getElementById('id-write-title').removeAttribute('disabled');
         document.getElementById('id-write-textarea').removeAttribute('disabled');
         document.getElementById('id-board-delete').style.display="none";
