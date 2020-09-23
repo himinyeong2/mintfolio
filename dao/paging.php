@@ -7,7 +7,6 @@ function paging($mode){
         $select_stmt = $con->prepare("SELECT * FROM Board");
         $select_stmt->execute();
         $result = $select_stmt->fetchAll(PDO::FETCH_ASSOC);
-       $con->
     }else{//클릭한 페이지가 있음..
         // $page = $_GET['page'];
         if( ($_SERVER['REQUEST_METHOD'] == 'GET'))
