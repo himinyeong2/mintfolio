@@ -25,7 +25,7 @@ include 'nav.php';
                         <input id="id-contact-email" type="text" class="input-text contact-email" placeholder="email">
                         <input id="id-contact-phone" type="text" class="input-text contact-num" placeholder="phone number">
                     </div>
-                    <textarea id="id-contact-contents" class="input-text" placeholder="content" rows="5" cols="57" ></textarea>
+                    <textarea id="id-contact-contents" class="input-text contact-textarea" placeholder="content" ></textarea>
                     <button id="id-send-email"class="input-text contact-submit">submit</button>
                     <div>
                         <img class="contact-img" src="image/insta.png">

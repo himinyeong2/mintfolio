@@ -73,7 +73,7 @@ function gotoEdit(){
             }
         })
         .catch((err)=>{
-            console.error("에러:",err);
+            console.error("에러:",err);s
         });
 }
 document.getElementById('id-board-edit').addEventListener('click', gotoEditPage);
