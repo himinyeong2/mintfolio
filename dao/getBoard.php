@@ -1,5 +1,4 @@
 <?php
-
 function getBoard($dno){
     include('dao/dbcon.php');
 
@@ -21,9 +20,11 @@ function getBoard($dno){
             $update_stmt = $con->prepare("UPDATE board SET views=(SELECT views FROM board WHERE dno=:dno)+1 WHERE dno=:dno");
             $update_stmt->bindParam(':dno',$dno);
             $update_stmt->execute();
+
         }
     
     
     return $result;
 }
+
 ?>

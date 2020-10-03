@@ -32,7 +32,7 @@ function paging($mode){
         $page=null;
     }
     //클릭한 페이지가 있음..
-    $size=5;
+    $size=10;
     if($category!=null){ // 카테고리가 선택이 되었나용?
         if($page==null){//default page일떄!! 즉 첫번쨰 페이지!!!
             $start=1*$size-$size;

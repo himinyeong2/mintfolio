@@ -5,6 +5,7 @@ function insertBoard() {
     let month = today.getMonth() + 1;  // 월
     let date = today.getDate();  // 날짜
     var data = {
+        'mode':"INSERT",
         'category':document.getElementById('id-write-category').value,
         'writer':document.getElementById('id-write-name').value,
         'password':document.getElementById('id-write-pw').value,
@@ -12,7 +13,7 @@ function insertBoard() {
         'contents':document.getElementById('id-write-textarea').value,
         'date': year+"-"+month+"-"+date
     };
-    fetch('http://localhost/mintfolio/dao/insert_board.php',{
+    fetch('http://localhost/mintfolio/dao/manipulateBoard.php',{
         method:'POST',
         headers:{
             'Content-Type':'application/json'

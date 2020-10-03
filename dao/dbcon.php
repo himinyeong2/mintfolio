@@ -36,6 +36,4 @@
         undo_magic_quotes_gpc($_COOKIE); 
     } 
  
-    header('Content-Type: text/html; charset=utf-8'); 
-    #session_start();
 ?>
