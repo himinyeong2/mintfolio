@@ -63,12 +63,12 @@ $comment = getComment($dno);
                     <div class="comment-info">
                         <label class="comment-name">'.$comment[$i]['name'].'</label>
                         <div class="comment-button">
-                            <button class="input-text comment-btn">수정</button>
-                            <button class="input-text comment-btn">삭제</button>
+                            <button id="id-comment-edit-'.$comment[$i]['dno'].'" class="input-text comment-btn comment-edit">수정</button>
+                            <button id="id-comment-delete-'.$comment[$i]['dno'].'" class="input-text comment-btn comment-delete">삭제</button>
                             <button id="id-comment-'.$comment[$i]['dno'].'" class="input-text comment-btn comment-comment-btn">댓글달기</button>
                         </div>
                         </div>
-                    <textarea class="input-text comment-textarea " disabled>'.$comment[$i]['comment'].'</textarea>
+                    <textarea id="id-comment-textarea-'.$comment[$i]['dno'].'" class="input-text comment-textarea " disabled>'.$comment[$i]['comment'].'</textarea>
                     </div>
                 </div>';
                 $data = getCComment($comment[$i]['dno']);
@@ -78,11 +78,11 @@ $comment = getComment($dno);
                     <div class="comment-info">
                         <label class="comment-name">'.$data[$j]['name'].'</label>
                         <div class="comment-button">
-                            <button class="input-text comment-btn">수정</button>
-                            <button class="input-text comment-btn">삭제</button>
+                            <button id="id-comment-edit-'.$data[$j]['dno'].'" class="input-text comment-btn comment-edit">수정</button>
+                            <button id="id-comment-delete-'.$data[$j]['dno'].'" class="input-text comment-btn comment-delete">삭제</button>
                         </div>
                         </div>
-                    <textarea class="input-text comment-textarea " disabled>'.$data[$j]['comment'].'</textarea>
+                    <textarea  id="id-comment-textarea-'.$data[$j]['dno'].'" class="input-text comment-textarea " disabled>'.$data[$j]['comment'].'</textarea>
                     </div>
                 </div>';
                 }
@@ -102,6 +102,7 @@ $comment = getComment($dno);
                 <button id="id-comment-comment-input-button" class="input-text board-btn comment-input-save">저장</button>
             </div> -->
 <script type="text/javascript" src="js/show-board.js"></script>
+<script type="text/javascript" src="js/comment.js"></script>
 </body>
 
 </html>

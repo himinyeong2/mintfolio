@@ -369,6 +369,9 @@ td>a{
 #comment-field{
     margin:20px 0;
 }
+.comment-complete{
+    display:none;
+}
 .comment-comment-input-field{
     position: relative;
     display:none;
