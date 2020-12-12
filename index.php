@@ -1,18 +1,4 @@
-<!DOCTYPE HTML>
-
-<html>
-
-<head>
-	<title>Mintfolio</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="assets/css/main.css?ver=1" />
-	<link rel="stylesheet" href="assets/css/minyeong.css?ver=0" />
-
-</head>
-
-<body>
+<?php include "header.html" ?>
 	<!-- Banner -->
 	<section id="header">
 		<ul class='menu'>
@@ -42,7 +28,7 @@
 				<h3>LEE MINYEONG</h3>
 				<p>IT 시대의 흐름을 사로잡는</p>
 				<p>어떤 프로젝트에도 융화될 수 있는</p>
-				<p>끊임없이 발전해 나아가는</p>
+				<p>끊임없이 <span id="go_to_calendar">발전</span>해 나아가는</p>
 				<p style="position: relative;">개발을 <span id='love'>사랑</span>하는<img id='love_img' src="images/heart.png"></p>
 			</section>
 			<section>
@@ -292,24 +278,14 @@
 		</div>
 	</section>
 
-	<!-- Footer -->
-	<footer id="footer">
-		<div class="copyright">
-			&copy; Untitled. All rights reserved. Images: <a href="http://unsplash.com">Unsplash</a>. Design: <a
-				href="http://templated.co">TEMPLATED</a>.
-		</div>
-	</footer>
+	<?php include "footer.html" ?>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="assets/js/main.js"></script>
 	<script src="assets/js/minyeong.js"></script>
-	<script src="assets/js/heart_cursor.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
 	<script>
+		document.getElementById('go_to_calendar').addEventListener('click',function(){
+			location.href= "calendar.php?mode=diary";
+		});
 		document.getElementById('send_mail').addEventListener('click', function () {
 			if($('#name').val()==''){
 				alert("이름을 입력해주세요");
@@ -349,6 +325,3 @@
 		});
 	</script>
 	
-	</body>
-
-</html>

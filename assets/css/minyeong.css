@@ -20,8 +20,6 @@
     list-style-type: none;
     float: left;
     margin: 0 5px;
-
-   
    
 }
 @media screen and (max-width: 736px) {
@@ -56,7 +54,7 @@
 
 #header>ul {
     position: absolute;
-    right: 0;
+    right: 7px;
     top: 15px;
 }
 
@@ -100,6 +98,135 @@
 #cv:hover{
     animation: shake 1s;
      animation-iteration-count: infinite;
+}
+
+/* 다이어리 입력 폼 */
+.background {
+    position: relative;
+    width: 100%;
+    /* height:1000px; */
+    top: 50px;
+    left: 0;
+    background-color: #EFE8E2;
+    color: #666666;
+    text-align: center;
+    padding: 200px 0;
+}
+
+.sector {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    top: 0%;
+}
+
+.diary-title {
+    position: relative;
+    top: 15px;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.contents {
+    position: absolute;
+    left: 10%;
+    top: 13%;
+    /* background-color:pink; */
+    width: 80%;
+    height: 80%;
+}
+
+.contents>textarea {
+    font-family: 'NotoSans';
+    background-color: transparent;
+    resize: none;
+    border: none;
+    width: 100%;
+    height: 90%;
+}
+
+.diary {
+    width: 100%;
+    height: 90%;
+    background-color: white;
+}
+
+.contents>textarea:focus {
+    outline: none;
+    border-color: none;
+    box-shadow: none;
+}
+.submit-btn {
+    text-decoration: none;
+    color: white;
+    background-color: #DEBAB8;
+    display: block;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #e28680 !important;
+    color: white !important;
+}
+
+
+.emo-div {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 15px 5px;
+}
+
+.emo-div>img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 달력 css */
+#calendar_background{
+    /* position: relative;
+    width:100%;
+    height:100%;
+    top:50px;
+    left:0; */
+    padding-top:50px;
+    background-color: #EFE8E2;
+    color: #666666;
+}
+#calendar{
+    margin:20px 0;
+}
+.calendar-div{
+    width:60%;
+    margin: 0 auto;
+    padding-bottom:15px;
+}
+#tbCalendarYM{
+    font-size:2rem;
+}
+.cal-tr{
+    background-color: transparent !important;
+}
+.cal-yoil>td{
+    border : 1px solid #666666;
+    height:60px;
+    
+}
+.cal-tr > td{
+    position: relative;
+    border : 0.5px solid #666666;
+    width:120px;
+    height:130px;
+    text-align: left;
+}
+.cal-tr > td:hover{
+    background-color:#EFD6D7;
+}
+.cal-tr > td:active{
+    background-color:#DEBAB8;
 }
 @keyframes shake {
 0% { transform: translate(1px, 1px) rotate(0deg); }

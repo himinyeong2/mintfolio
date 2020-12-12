@@ -1,0 +1,75 @@
+
+    <section id="header">
+		<ul class='menu'>
+			<li onclick="location.href='?mode=diary'" id="go_to_diary" style="<?php echo $diary_on?>" >DIARY</li>
+			<li id="go_to_schedule" style="<?php echo $schedule_on?>"  >SCHEDULE</li>
+		</ul>
+    </section>
+    
+	<section id="calendar_background" style="text-align: center;">
+		<div class = "calendar-div">
+			<table id="calendar"  align="center">
+				<tr style="background-color: transparent; border:none;">
+					<!-- label은 마우스로 클릭을 편하게 해줌 -->
+					<td id="prev"><label >
+							< </label>
+					</td>
+					<td align="center" id="tbCalendarYM" colspan="5"> yyyy m</td>
+					<td id="next"><label>>
+						</label></td>
+				</tr>
+				<tr class='cal-yoil'>
+					<td align="center">SUN</td>
+					<td align="center">MON</td>
+					<td align="center">TUE</td>
+					<td align="center">WEB</td>
+					<td align="center">THU</td>
+					<td align="center">FRI</td>
+					<td align="center">SAT</td>
+				</tr>
+            </table>
+		</div>
+    </section>
+	
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="/me/assets/js/cal.js" type="text/javascript"></script>
+    <script src="assets/js/header.js"></script>
+    
+    <script>
+        // 다이어리 리스트 받아오는 json변수
+        var json_data ='<?php echo $json_data ?>';
+        var data = JSON.parse(json_data);
+        
+        // 달력만들기
+        buildCalendar(data);
+        
+        // 이전달을 클릭 할 경우 이전 달력으로 넘어감
+        document.getElementById('prev').addEventListener('click',function(){
+            prevCalendar(data);
+        });
+        document.getElementById('next').addEventListener('click',function(){
+            nextCalendar(data);
+        });
+
+
+        document.getElementById('go_to_diary').addEventListener('click',function(){
+            location.href= "?mode=diary";
+        });document.getElementById('go_to_schedule').addEventListener('click',function(){
+            location.href= "?mode=schedule";
+        });
+
+        // 셀 클릭 시 다이어리 쓰기 페이지로 이동하는 함수
+        function addEvent(cell) {
+            cell.addEventListener('click', function () {
+                var yy = this.id.split("-")[0];
+                var mm = this.id.split("-")[1];
+                var dd = this.id.split("-")[2];
+                location.href = "?mode=diary_add&date="+yy+"-"+mm+"-"+dd;
+            });
+        }
+
+document.getElementById('tbCalendarYM').addEventListener('click',function(){
+    location.href= "/me";
+});
+    </script>
+

@@ -1,0 +1,82 @@
+
+<link rel='stylesheet' href = "/me/assets/css/modal.css">
+
+<section id="header">
+    <ul class='menu'>
+        <li onclick="location.href='?mode=diary'" id="go_to_diary" style="<?php echo $diary_on?>" >DIARY</li>
+        <li id="go_to_schedule" style="<?php echo $schedule_on?>"  >SCHEDULE</li>
+    </ul>
+</section>
+<section class="background">
+    <div class="sector">
+        <div class="diary">
+            <span id="date" class="diary-title"><?php echo $date ?></span>
+            <div class="contents">
+                <textarea id="contents"><?php echo $contents ?></textarea>
+            </div>
+        </div>
+        <?php echo $btn ?>
+    </div>
+</section>
+<div id="my_modal">
+    <h4 align="center">당신의 감정은 무엇입니까?</h4>
+    <?php echo $emotions ?>
+    <span class="modal_close_btn">close</span>
+</div>
+
+
+<script src="assets/js/modal.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/header.js"></script>
+
+<script>
+    //이모티콘 클릭시 저장..
+    var emo = document.getElementsByClassName("emo");
+    for (var i = 0; i < emo.length; i++) {
+        var type =  document.getElementById('save').getAttribute("type");
+        emo[i].addEventListener('click', function () {
+            diary = {
+                "type" : type,
+                "date": document.getElementById('date').innerHTML,
+                "contents": document.getElementById('contents').value,
+                "emotion": this.id
+            }
+            $.ajax({
+                url: "?mode=diary_reg",
+                type: "POST",
+                data: diary,
+                success: function (result) {
+                    if(type=="add"){
+                        alert("다이어리 입력이 완료되었습니다..");
+                    }else if(type=="edit"){
+                        alert("다이어리 수정이 완료되었습니다..");
+                    }
+                    location.href= "?mode=diary";
+                }
+            });
+        });
+    }
+    // 저장 버튼 클릭 시 모달 창 띄우기
+    document.getElementById('save').addEventListener('click', function () {
+        modal('my_modal');
+    });
+
+    // 삭제 버튼 클릭 시, 삭제 api
+    document.getElementById('del').addEventListener('click', function () {
+        diary = {
+                "type" : "del",
+                "date": document.getElementById('date').innerHTML
+            }
+            $.ajax({
+                url: "?mode=diary_reg",
+                type: "POST",
+                data: diary,
+                success: function (result) {
+                    alert("다이어리 삭제가 완료되었습니다");
+                    location.href= "?mode=diary";
+                }
+            });
+    });
+   
+
+</script>    
