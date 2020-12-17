@@ -1,14 +1,75 @@
 
+<style>
+    #my_modal {
+    display: none;
+    width: 550px;
+    height:550px;
+    padding: 20px 60px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 3px;
+}
+
+#my_modal .modal_close_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.checkbox {
+    display:inline-block;
+    width:15px;
+    height:15px;
+    background-color:#E7E6E6;
+    margin-right:2px;
+    vertical-align: middle;
+}
+.schedule_text{
+    display:inline-block;
+    vertical-align: middle;
+    margin:0 5px;
+}
+.schedule_text>input{
+    border:none;
+    background-color:#E7E6E6;
+}
+.add_btn{
+    background-color:#DEBAB8;
+    color:white;
+    padding:10px 15px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.add_btn:hover{
+    background-color: #e28680 !important;
+    color: white !important;
+}
+.sch_row{
+    display:block;
+    margin: 0 auto;
+}
+</style>
+
     <section id="header">
 		<ul class='menu'>
 			<li onclick="location.href='?mode=diary'" id="go_to_diary" style="<?php echo $diary_on?>" >DIARY</li>
 			<li id="go_to_schedule" style="<?php echo $schedule_on?>"  >SCHEDULE</li>
 		</ul>
     </section>
-    
-	<section id="calendar_background" style="text-align: center;">
-		<div class = "calendar-div">
-			<table id="calendar"  align="center">
+    <div id="my_modal">
+        <h4 id='schedule_title' align="center">YYYY MM DD</h4>
+        <span class="modal_close_btn">close</span>
+        <div class='sch_row'>
+            <a href='#' class="checkbox"></a><span>AM</span>
+            <a href='#' class="checkbox"></a><span>PM</span>
+            <div class="schedule_text">
+                <input type="text">
+            </div>
+            <a href='#' class='add_btn'>추가</a>
+        </div>
+    </div>
+    <section id="calendar_background" style="text-align: center;">
+        <div class="calendar-div">
+            <table id="calendar" align="center">
 				<tr style="background-color: transparent; border:none;">
 					<!-- label은 마우스로 클릭을 편하게 해줌 -->
 					<td id="prev"><label >
@@ -30,7 +91,9 @@
             </table>
 		</div>
     </section>
+
 	
+    <script src="assets/js/modal.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="/me/assets/js/cal.js" type="text/javascript"></script>
     <script src="assets/js/header.js"></script>
@@ -38,8 +101,12 @@
     <script>
         // 다이어리 리스트 받아오는 json변수
         var json_data ='<?php echo $json_data ?>';
-        var data = JSON.parse(json_data);
-        
+        var mode = '<?php echo $_GET["mode"] ?>';
+        if(json_data!='')
+            var data = JSON.parse(json_data);
+        else
+            var data = {};
+
         // 달력만들기
         buildCalendar(data);
         
@@ -61,11 +128,22 @@
         // 셀 클릭 시 다이어리 쓰기 페이지로 이동하는 함수
         function addEvent(cell) {
             cell.addEventListener('click', function () {
+                
                 var yy = this.id.split("-")[0];
                 var mm = this.id.split("-")[1];
                 var dd = this.id.split("-")[2];
+
+                if(mode == "diary"){
                 location.href = "?mode=diary_add&date="+yy+"-"+mm+"-"+dd;
+                }
+                else{
+                    modal('my_modal');
+                    document.getElementById('schedule_title').innerHTML = yy+"."+mm+"."+dd;
+                }
             });
+        }
+        function add_schedule(){
+            
         }
 
 document.getElementById('tbCalendarYM').addEventListener('click',function(){

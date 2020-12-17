@@ -17,6 +17,10 @@
         
         include("html/calendar.html");
     }
+    else if($mode=="schedule"){
+        $schedule_on ="color : #DEBAB8;";
+        include("html/calendar.html");
+    }
     else if($mode == "diary_add"){
 
         $diary_on = "color : #DEBAB8;";
