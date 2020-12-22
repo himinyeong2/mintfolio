@@ -72,8 +72,10 @@
        
         $conn->query($sql);
         exit;
+    }else if($mode=="schedule_reg"){
+        print_r($_POST);
     }
-
+    
     include "footer.html";
    
 ?>
