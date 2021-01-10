@@ -77,6 +77,10 @@
 					</div>
 					<span class="about_me_title">2020.11.12</span>
 					<span class="about_me_content">정보처리기사 취득</span>
+					<div>
+						<span class="about_me_title">2020.12.29</span>
+						<span class="about_me_content">SQLD 자격증 취득</span>
+					</div>
 				</div>
 				<div  class='content_in_section'>
 					<h3 style="display:inline-block; margin-right: 10px;">My CV</h3> 
@@ -163,6 +167,20 @@
 			<h2 style="text-align: center;">PORTFOLIO</h2>
 
 			<div class="spotlight">
+				<div  onclick="window.open('https://github.com/Yomi-Kim/Erun_Dev');" class="image">
+					<img src="images/portfolio/pickm2.png" alt="" />
+					<!-- <span style="position:absolute; left:35%; top:50%; font-size:20px; font-style: bold; color:white;">go to repository</span> -->
+				</div>
+				<div class="content">
+					<h3>PICK ME</h3>
+					<span class='portfolio_span'>#php #mysql </span>
+					<p>2020년 하반기 ICT 인턴십때 진행한 프로젝트로, 오디션 준비생들을 위한 오디션 플랫폼 서비스로서 댄스, 보컬, 연기 등 다양한 장르의 영상 콘텐츠를 접할 수 있는 웹사이트이다. 학원회원, 학생회원, 트레이너회원, 대중회원, 엔터회원으로 총 5가지 회원군이 있으며 각 회원군 마다 이용할 수 있는 기능이 다양하다. 중심이 되는 회원군은 학생회원, 학원회원이며 학생회원은 학원회원이 등록한 강의를 수강할 수 있고 페스티벌에 참여할 수 있다. 페스티벌에 참여하여 캔디라는 가상화폐로 수익을 창출할 수 있다.  </p>
+					<ul class="actions">
+						<li><a href="#" class="button alt">Details</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="spotlight">
 				<div  onclick="window.open('https://github.com/himinyeong2/mintfolio');" class="image">
 					<img src="images/portfolio/dayspirit2.png" alt="" />
 					<!-- <span style="position:absolute; left:35%; top:50%; font-size:20px; font-style: bold; color:white;">go to repository</span> -->
@@ -177,7 +195,6 @@
 						<li><a href="#" class="button alt">Details</a></li>
 					</ul>
 				</div>
-				
 			</div>
 			<div class="spotlight">
 				<div class="image">

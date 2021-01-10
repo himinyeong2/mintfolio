@@ -1,0 +1,193 @@
+<style>
+    body {
+        background-color: #EFE8E2;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        background-color: #DEBAB8;
+        border-radius: 0.2rem;
+        color: white;
+        text-decoration: none;
+        vertical-align: middle;
+    }
+
+    .full_btn {
+        width: 100%;
+    }
+
+    .unfiiled_btn {
+        background-color: white;
+        color: #E28680;
+        border: 1px solid #E28680;
+    }
+
+    .btn:hover {
+        background-color: #E28680;
+        color: white !important;
+    }
+
+    .ck-editor__editable_inline {
+        min-height: 500px;
+        line-height: 10%;
+    }
+
+    .tox-tinymce {
+        min-height: 600px;
+    }
+</style>
+
+<section id="header">
+    <ul class='menu'>
+        <li onclick="location.href = 'my_blog.php'">HOME</li>
+        <li>STUDY</li>
+        <li>ALGORITHM</li>
+        <li>PROJECT</li>
+        <li>GUEST</li>
+    </ul>
+</section>
+<div class="container" style="margin-top:100px; margin-bottom: 100px;">
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="?mode=reg_board" method="post" name="study_form" enctype="multipart/form-data">
+                <div id="modal" class="modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <p>카테고리를 선택해주세요</p>
+                                <select name="sub_category">
+                                    <option>알고리즘</option>
+                                    <option>데이터베이스</option>
+                                </select>
+                            </div>
+                            <div class="modal-footer">
+                                <a onclick="$('form[name=study_form]').submit()" type="button" class="btn">SAVE</a>
+                                <a type="button" id="close_btn" class="btn unfiiled_btn" data-dismiss="modal">CLOSE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-light mb-3">
+                    <div class="card-header">글 입력</div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="form-group">
+                                    <fieldset>
+                                        <label class="control-label" for="readOnlyInput">제목</label>
+                                        <input class="form-control" name="title" id="readOnlyInput" type="text"
+                                            placeholder="제목을 입력하세요">
+                                    </fieldset>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-group">
+                                    <label for="content">내용</label>
+                                    <textarea id="mytextarea" name="contents">
+                                  </textarea>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-group">
+                                    <label for="content">해시태그</label>
+                                    <input class="form-control" name="tag" type="text" placeholder="문자만 입력해주세요"
+                                        style="width:200px; display: inline-block; vertical-align: middle;">
+                                    <a id="add_btn" class="btn">add</a>
+                                    <span id="hashtag"> </span>
+                                    <input name="hashtag" type="text" value="" hidden>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-group">
+                                    <label for="content">메인이미지</label>
+                                    <fieldset>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="inputGroupFile02">
+                                            <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                                          </div>
+                                    </fieldset>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div align="center" class="col-sm-12">
+                                        <a id="insert_btn" class="btn full_btn">INSERT</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="assets/js/header.js"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+        toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+        toolbar_mode: 'floating',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+    });
+</script>
+<script>
+    document.getElementById('insert_btn').addEventListener('click', function () {
+        document.getElementById('modal').style.display = "block";
+    });
+    document.getElementById('close_btn').addEventListener('click', function () {
+        document.getElementById('modal').style.display = "none";
+    });
+    document.getElementById('add_btn').addEventListener('click', function () {
+        var value = $('input[name=tag]').val();
+        if(!check(value)) return;
+        $('#hashtag').append("#" + value + "&nbsp;");
+        if( $('input[name=hashtag]').val() == ""){
+            $('input[name=hashtag]').val($('input[name=tag]').val());
+        }else{
+            $('input[name=hashtag]').val($('input[name=hashtag]').val()+ ","+ $('input[name=tag]').val());
+        }
+        
+        $('input[name=tag]').val("");
+        // $('input[name=hashtag]').val($('#hashtag').html());
+    });
+
+    function check(value) {
+
+        if (value == '' || value == null) {
+            alert('값을 입력해주세요');
+            return false;
+        }
+
+        var blank_pattern = /^\s+|\s+$/g;
+        if (value.replace(blank_pattern, '') == "") {
+            alert(' 공백만 입력되었습니다 ');
+            return false;
+        }
+
+
+
+        //공백 금지
+        //var blank_pattern = /^\s+|\s+$/g;(/\s/g
+        var blank_pattern = /[\s]/g;
+        if (blank_pattern.test(value) == true) {
+            alert(' 공백은 사용할 수 없습니다. ');
+            return false;
+        }
+
+
+        var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+
+        if (special_pattern.test(value) == true) {
+            alert('특수문자는 사용할 수 없습니다.');
+            return false;
+        }
+
+       return true;
+
+    }
+</script>
